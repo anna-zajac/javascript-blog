@@ -221,7 +221,7 @@ function generateAuthors(){
 
     /* find author wrapper*/
 
-    const authorList = article.querySelectorAll(optArticleAuthorSelector);
+    const authorList = article.querySelector(optArticleAuthorSelector);
     console.log('authorList', authorList);
 
     /* make html variable with empty string */
@@ -235,7 +235,7 @@ function generateAuthors(){
 
     /* generate HTML of the link */
 
-    const authorLinkHTML = '<li><a href="#author-' + authorName + '"> <span>' + authorName + '<span></a></li>';
+    const authorLinkHTML = '<li><a href="#author-' + authorName + '"><span>' + authorName + '<span></a></li>';
 
     /* add generated code to html variable */
 
