@@ -122,18 +122,18 @@ body {
 /*Tags*/
 
 .tag-size-1 {
-  font-size: 18px;
-  color: #4d4949;
+  font-size: 20px;
+  color: #2ebd5b;
 }
 
 .tag-size-2 {
-  font-size: 21px;
-  color:#e24586;
+  font-size: 24px;
+  color:#3e63ca;
 }
 
 .tag-size-3 {
   font-size: 26px;
-  color: #0b5252;
+  color: #be8814;
 }
 
 .tag-size-4 {
@@ -142,10 +142,15 @@ body {
 
 }
 .tag-size-5 {
-  font-size: 32px;
+  font-size: 25px;
   color: #ff4500;
 }
 
 .tag li {
-display: inline-block;
+display: inline;
+margin: 0 5px;
+}
+
+.list a {
+  text-decoration: none;
 }
