@@ -168,7 +168,7 @@ function generateTags(){
 
       /* generate HTML of the link */
 
-      const tagLinkHTML = '<li><a href="#tag-' + tag + '">' + tag + '</a></li> ';
+      const tagLinkHTML = '<li><a href="#tag-' + tag + '">' + tag +'</a></li> ';
       console.log('tagLink', tagLinkHTML);
 
       /* add generated code to html variable */
@@ -278,6 +278,10 @@ addClickListenersToTags();
 
 function generateAuthors(){
 
+  /* [NEW] create a new variable allAuthors with an empty object */
+
+  let allAuthors = {};
+
   /* find all articles */
   const articles = document.querySelectorAll(optArticleSelector);
   console.log('articles', articles);
@@ -307,6 +311,14 @@ function generateAuthors(){
 
     html = html + authorLinkHTML;
     authorList.innerHTML = html;
+
+    /* [NEW] check if this link is NOT already in allAuthors */
+    if(!allAuthors[tag]){
+      /* [NEW] add tag to allTags object */
+      allTags[tag] = 1;
+    } else {
+      allTags[tag]++;
+    }
   }
  
 }
