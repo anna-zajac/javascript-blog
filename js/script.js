@@ -51,8 +51,7 @@ const optArticleSelector = '.post',
   optTagsListSelector = '.tags .list',
   optCloudClassCount = '5',
   optCloudClassPrefix = 'tag-size-',
-  optCloudClassPrefixAuthor = 'author-size',
-  optAuthorsListSelector = '.authorr .list';
+  optAuthorsListSelector = '.authors';
 
 function generateTitleLinks(customSelector = ''){
   console.log('customSelector', customSelector);
@@ -117,7 +116,7 @@ function calculateTagsParams(tags) {
       params.min = tags[tag];
     } 
   }
-return params;
+  return params;
 }
 
 function calculateTagClass(count, params){
@@ -338,22 +337,22 @@ function generateAuthors(){
     }
 
     /* [NEW] find list of authors in right column */
-  const authorRightList = document.querySelector('.authors');
+    const authorRightList = document.querySelector(optAuthorsListSelector);
 
-  const authorParams = calculateAuthorParams(allAuthors);
-  console.log('authorParams:', authorParams); 
+    const authorParams = calculateAuthorParams(allAuthors);
+    console.log('authorParams:', authorParams); 
 
-  /*Create variable for all links HTML code*/
+    /*Create variable for all links HTML code*/
 
-  let allAuthorsHTML = '';
-  const authorHTML = '<li><a class="' + calculateAuthorClass(allAuthors[authorName], authorParams) + '" href="#author-' + authorName +'">' + authorName + '(' + allAuthors[authorName] + ') </a></li>';
-  allAuthorsHTML += authorHTML;
+    let allAuthorsHTML = '';
+    const authorHTML = '<li><a class="' + calculateAuthorClass(allAuthors[authorName], authorParams) + '" href="#author-' + authorName +'">' + authorName + '(' + allAuthors[authorName] + ') </a></li>';
+    allAuthorsHTML += authorHTML;
 
-  authorRightList.innerHTML = allAuthorsHTML;
+    
 
   }
 
-
+  authorRightList.innerHTML = allAuthorsHTML;
 
 }
 
