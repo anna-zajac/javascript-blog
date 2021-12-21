@@ -328,6 +328,8 @@ function generateAuthors(){
     html = html + authorLinkHTML;
     authorList.innerHTML = html;
 
+    
+
     /* [NEW] check if this link is NOT already in allAuthors */
     if(!allAuthors[authorName]){
       /* [NEW] add tag to allTags object */
@@ -342,17 +344,22 @@ function generateAuthors(){
     const authorParams = calculateAuthorParams(allAuthors);
     console.log('authorParams:', authorParams); 
 
+    let allAuthorsHTML = '';
+
+    for(let authorName in allAuthors){
+
     /*Create variable for all links HTML code*/
 
-    let allAuthorsHTML = '';
-    const authorHTML = '<li><a class="' + calculateAuthorClass(allAuthors[authorName], authorParams) + '" href="#author-' + authorName +'">' + authorName + '(' + allAuthors[authorName] + ') </a></li>';
-    allAuthorsHTML += authorHTML;
-
     
+     const authorHTML = '<li><a class="' + calculateAuthorClass(allAuthors[authorName], authorParams) + '" href="#author-' + authorName +'">' + authorName + '(' + allAuthors[authorName] + ') </a></li>';
+     allAuthorsHTML += authorHTML;
+    }
+
+    authorRightList.innerHTML = allAuthorsHTML;
 
   }
 
-  authorRightList.innerHTML = allAuthorsHTML;
+  
 
 }
 
